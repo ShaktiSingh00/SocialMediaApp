@@ -26,15 +26,15 @@ const Leftbar = () => {
         <div className='leftBar'>
             <div className='container'>
                 <div className='menu'>
-                {currentUser && (
-                        <>
+                {/* {currentUser && (
+                        <> */}
                     <div className='user'>
                         <img src = { currentUser.profilePic} alt='' />
                         <span>{currentUser.name}</span>
 
                         </div>
-                    </>
-                )}
+                    {/* </>
+                )} */}
                
 
 

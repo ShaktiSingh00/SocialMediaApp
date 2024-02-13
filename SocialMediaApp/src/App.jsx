@@ -16,6 +16,8 @@ import Rightbar from './components/rightBar/Rightbar';
 import { DarkModeContext } from './context/darkModeContext';
 import { useContext } from "react";
 import { AuthContext } from './context/authContext';
+// import { QueryClient, QueryClientProvider } from 'react-query'
+
 function App() {
   
   const { currentUser } = useContext(AuthContext);
@@ -34,20 +36,20 @@ function App() {
     )
   };
 
-  const ProtectedRoute = ({ children }) => {
-    if (!currentUser) {
-      return <Navigate to="/login" />
-    }
-    return children;
-  }
+   const ProtectedRoute = ({ children }) => {
+     if (!currentUser) {
+       return <Navigate to="/login" />
+     }
+     return children;
+   }
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: (
-        <ProtectedRoute>
+          <ProtectedRoute>
           <Layout />
-        </ProtectedRoute>
+          </ProtectedRoute>
       ),
       children: [
         {
